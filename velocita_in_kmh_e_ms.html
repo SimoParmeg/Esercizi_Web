@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Velocità media in km/h e m/s</title>
+  </head>
+  <body>
+    <h1>Velocità media in km/h e m/s</h1>
+    <p>
+      Inserisci il tempo impiegato:
+      <input id="min" value="0" /> '
+      <input id="sec" value="10" /> "
+    </p>
+    <p>
+      Inserisci lo spazio percorso:
+      <input id="metri" value="100" /> metri
+    </p>
+    <p>
+      <input type="button" value="Calcola velocità media"
+      onclick="
+              // lettura dati iniziali
+              min = parseInt(document.getElementById('min').value);
+              sec = parseInt(document.getElementById('sec').value);
+              metri = parseInt(document.getElementById('metri').value);
+              // elaborazione dati
+              sec += min*60;
+              vms = metri / sec
+              vkmh = vms * 3600 / 1000;
+              // visualizzazione dei dati finali
+              document.getElementById('vms').innerHTML = vms;
+              document.getElementById('vkmh').innerHTML = vkmh"
+      />
+    </p>
+    <p>
+      La velocità media è pari a <span id="vms">...</span> m/s,
+      <br />
+      che corrisponde a <span id="vkmh">...</span> km/h
+    </p>
+  </body>
+</html>
